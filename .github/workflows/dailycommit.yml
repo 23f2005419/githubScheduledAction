@@ -21,6 +21,11 @@ jobs:
       - name: 23f2005419@ds.study.iitm.ac.in
         run: echo "Daily commit at $(date)" >> daily_commit.txt
 
+      - name: Configure git
+        run: |
+          git config user.name 'github-actions-by-arul'
+          git config user.email '23f2005419@ds.study.iitm.ac.in'
+
       - name: Commit and push changes
         run: |
           git add .
