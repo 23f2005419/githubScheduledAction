@@ -15,5 +15,5 @@ jobs:
       - name: Checkout repository content
         uses: actions/checkout@v2
 
-      - name: Make changes
+      - name: 23f2005419@ds.study.iitm.ac.in
         run: echo "Daily commit at $(date)" >> daily_commit.txt
