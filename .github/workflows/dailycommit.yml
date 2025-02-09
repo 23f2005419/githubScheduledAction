@@ -6,10 +6,13 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   daily-commit:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository content
@@ -17,3 +20,10 @@ jobs:
 
       - name: 23f2005419@ds.study.iitm.ac.in
         run: echo "Daily commit at $(date)" >> daily_commit.txt
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Daily commit at $(date)"
+          git push
+
